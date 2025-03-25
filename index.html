@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Mi Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el carrusel */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 10px;
+            margin: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        header nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden; /* Ocultar las imágenes que no están visibles */
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Transición suave */
+        }
+
+        .carousel-images {
+            width: 85%; /* Tamaño de la imagen reducido */
+            margin: 0 auto;
+        }
+
+        .carousel-button {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .carousel-button.left {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .carousel-button.right {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        section#inicio {
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Categoria.html">Categoría</a></li>
+                <li><a href="Contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrusel de Imágenes -->
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img class="carousel-images" src="Ferreteria1.jpg" alt="Imagen 1">
+            <img class="carousel-images" src="Ferreteria2.jpg" alt="Imagen 2">
+            <img class="carousel-images" src="Ferreteria3.jpg" alt="Imagen 3">
+        </div>
+
+        <!-- Botones para navegar -->
+        <a class="carousel-button left" onclick="changeImage(-1)">&#10094;</a>
+        <a class="carousel-button right" onclick="changeImage(1)">&#10095;</a>
+    </div>
+
+    <section id="inicio" class="section">
+        <h1>Bienvenidos a Ferreteria Rivera</h1>
+        <p>Bienvenido a Ferretería Rivera, tu destino único para todas tus necesidades de ferretería.</p>
+        <p>Aquí encontrarás desde herramientas de alta calidad y materiales de construcción duraderos hasta productos de jardinería.</p>
+        <p>Ya sea que estés trabajando en un proyecto de renovación en casa, realizando una reparación urgente o buscando mejorar tu jardín, tenemos todo lo que necesitas para llevar a cabo el trabajo con éxito.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ferreteria Rivera. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const carouselSlide = document.querySelector('.carousel-slide');
+        const images = document.querySelectorAll('.carousel-images');
+
+        // Mostrar la imagen correspondiente con deslizamiento
+        function changeImage(direction) {
+            currentImageIndex += direction;
+
+            if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            }
+
+            // Deslizar las imágenes
+            const translateValue = -(currentImageIndex * images[0].clientWidth);
+            carouselSlide.style.transform = `translateX(${translateValue}px)`;
+        }
+
+        window.addEventListener('resize', () => {
+            // Asegurar que las imágenes se adapten al tamaño de la pantalla al redimensionar
+            const translateValue = -(currentImageIndex * images[0].clientWidth);
+            carouselSlide.style.transform = `translateX(${translateValue}px)`;
+        });
+    </script>
+
+</body>
+</html>

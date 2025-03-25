@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Mi Tienda</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Contenedor del producto */
+        .product {
+            width:200px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Contenedor de la imagen */
+        .product .image-container {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Estilos para las imágenes del producto */
+        .product img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        /* Animación para cambiar entre imágenes */
+        @keyframes cambiarImagen {
+            0% { opacity: 1; }
+            33.33% { opacity: 0; }
+            66.66% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Aplicar la animación con diferentes tiempos de inicio para cada imagen */
+        .product img:nth-child(1) {
+            animation: cambiarImagen 9s infinite;
+            animation-delay: 0s;
+            opacity: 1;
+        }
+
+        .product img:nth-child(2) {
+            animation: cambiarImagen 9s infinite;
+            animation-delay: 3s;
+        }
+
+        .product img:nth-child(3) {
+            animation: cambiarImagen 9s infinite;
+            animation-delay: 6s;
+        }
+
+        /* Contenedor del texto debajo de la imagen */
+        .product .text-container {
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        /* Estilos del título del producto */
+        .product h3 {
+            margin-top: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Estilos de la descripción del producto */
+        .product p {
+            margin-top: 5px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Sobre Nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Categoria.html">Categoría</a></li>
+                <li><a href="Contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="productos" class="section">
+        <h2>Productos</h2>
+        <div class="product-grid">
+
+            <!-- Producto 1 - Taladro -->
+            <div class="product">
+                <div class="image-container">
+                    <img src="taladro1.jpg" alt="Taladro 1">
+                    <img src="taladro2.jpg" alt="Taladro 2">
+                    <img src="taladro3.jpg" alt="Taladro 3">
+                </div>
+                <div class="text-container">
+                    <h3>Taladro $80.00</h3>
+                    <p>Atornillador de 1/4 Truper 
+                       Con bateria de 20v
+                       2 amperios
+		       1 cargador
+                       Luz led
+                       Luz indicador de carga
+                       1 punta
+                       1 click para colgar
+                       1 año de garantia</p>
+                </div>
+            </div>
+
+            <!-- Producto 2 - Podadora  -->
+            <div class="product">
+                <div class="image-container">
+                <img src="Podadora1.jpg" alt="Podadora 1">
+                <img src="Podadora2.jpg" alt="Podadora 2">
+                <img src="Podadora3.jpg" alt="Podadora 3">
+            </div>
+                <div class="text-container">
+                    <h3>Podadora $225.00</h3>
+                    <p>Podadora con motor a gasolina de 3 HP
+                       Cilindrada 99 cc
+                       Potencia 3 HP (2,237 W)
+                       Capacidad de corte 16" (40 cm)
+                       Capacidad del tanque 0.75 L
+                       Diámetro de ruedas delanteras / traseras 7" / 7"
+                       Ciclo de trabajo 50 minutos de descanso por cada tanque consumido.
+                       Máximo Diario 6 horas
+                       Peso 14 kg
+		       1 año de garantia
+                       </p>
+                </div>
+            </div>
+        
+
+            <!-- Producto 3 - Desbrozadora electrica -->
+            <div class="product">
+                <div class="image-container">
+                <img src="Desbrozadora1.jpg" alt="Desbrozadora 1">
+                <img src="Desbrozadora2.jpg" alt="Desbrozadora 2">
+                <img src="Desbrozadora3.jpg" alt="Desbrozadora 3">
+            </div>
+                <div class="text-container">
+                    <h3>Dezbrozadora $34.00</h3>
+                    <p>26 amperios
+                       9" de corte
+                       Incluye su hilo de primer uso
+                       Mango tipo D
+		       1 año de garantia
+                       </p>
+                </div>
+            </div>
+       
+             
+            <!-- Producto 4 - Minisoldadora -->
+	    <div class="product">
+    		<div class="image-container">
+      	        <img src="Minisoldadora1.jpg" alt="Minisoldadora 1">
+   	        <img src="Minisoldadora2.jpg" alt="Minisoldadora 2">
+                <img src="Minisoldadora3.jpg" alt="Minisoldadora 3">
+    	    </div>
+    		<div class="text-container">
+        	    <h3>Minisoldadora $82.00</h3>
+        	    <p>Voltaje de alimentacion de 1 fase(127V)
+                       Rango de corriente 1 Fase(20A-100A CD
+                       Bornes de cambios 3/8"
+                       Para electrodo revestido 6013,6011
+                       Cable con tenaza portaelectrodo 1.9mm
+                       Correa
+                       Careta de alambre
+                       Cepillo de alambre
+                       Cable de alimentación con clavija 2mts
+                       1Kg de electrodos 1/8" E6013-4
+		       1 año de garantia
+                    </p>
+              </div>
+           </div>
+	
+
+           <!-- Producto 5 - Rotomartillo -->
+           <div class="product">
+    		<div class="image-container">
+      	        <img src="Rotomartillo1.jpg" alt="Rotomartillo 1">
+   	        <img src="Rotomartillo2.jpg" alt="Rotomartillo 2">
+                <img src="Rotomartillo3.jpg" alt="Rotomartillo 3">
+    	    </div>
+    		<div class="text-container">
+        	    <h3>Rotomartillo $85.00</h3>
+        	    <p>Motor de 1200W
+                       Varilla de control de profundidad
+                       Luz led para iluminacion de trabajo
+                       Boton de uso continuo
+                       Mango auxiliar con giro 360°
+                       Broquero 1/2"(13mm)
+                       Velocidad variable reversible
+                       Sistema de cambio de velocidad 2X
+                       Perforación máxima en concreto: 3/4(19mm)
+                       Perforación máxima en madera: 1 1/2(38mm)
+                       Perforación máxima en metal:  1 1/2(13mm</p>
+              </div>
+           </div>
+           
+               <!-- Producto 6 - Aspiradora/Sopladora -->
+               <div class="product">
+    		<div class="image-container">
+      	        <img src="Aspiradora1.jpg" alt="Aspiradora 1">
+   	        <img src="Aspiradora2.jpg" alt="Aspiradora 2">
+                <img src="Aspiradora3.jpg" alt="Aspiradora 3">
+    	    </div>
+    		<div class="text-container">
+        	    <h3>Aspiradora $115.00</h3>
+        	    <p>Motor 5HP para trabajos exigentes
+                       Tecnología de reducción de ruido
+                       Capacidad del tanque 12Gal(45L)
+                       Cable de alimentacion 3.6M
+                       Aspira líquidos y solidos
+                       Ruedas con giro 360°
+                       Manguera de 2.1M
+                       Boquilla para automóvil
+                       Boquilla tipo garra
+                       Boquilla para sopladora
+                       2 tubos de extensión
+                       Difusor de ruido
+                       Filtro de espuma para líquidos y sólidos
+                       Refacciones y accesorios</p>
+              </div>
+           </div>
+        
+           <!-- Producto 7 - Compresor vertical -->
+           <div class="product">
+    		<div class="image-container">
+      	        <img src="Compresor1.jpg" alt="Compresor 1">
+   	        <img src="Compresor2.jpg" alt="Compresor 2">
+                <img src="Compresor3.jpg" alt="Compresor 3">
+    	    </div>
+    		<div class="text-container">
+        	    <h3>Compresor Vertical $115.00</h3>
+        	    <p>Compresor autolubricado de 24L
+                       Motor monofásico de 2-2/3HP
+                       Bobinas de cobre 2X
+                       Presión máxima de operación 135psi
+                       Presostato con 2 manómetros
+                       Encendido manual y funcionamiento automático
+                       2 conexiones rápidas de latón con salida de 1/4"
+                       Tubos de descarga con aluminio
+                       Liviano y compacto
+                       Ideal para talleres, carpintería, mecanica y herramientas neumaticas
+                       </p>
+              </div>
+           </div>
+
+           
+
+
+       </div> 
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ferreteria Rivera. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
